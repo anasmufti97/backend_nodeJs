@@ -3,14 +3,11 @@ const app = express();
 
 const userModel = require('./userModel');
 
-
-
 app.use(function (req, res, next) {
     console.log("Middle wareworking");
     next();
 
 });
-
 
 // app.get('/', (req, res) => {
 //     res.send('Hello World! with nodemon');
@@ -20,7 +17,6 @@ app.use(function (req, res, next) {
 //     res.send(req.params.username);
 
 // });
-
 
 app.get('/createUser', async (req, res) => {
     let user = await userModel.create({
@@ -41,17 +37,10 @@ app.get('/updateUser', async (req, res) => {
     res.send(user);
 }
 );
-
-
 app.get('/read', async (req, res) => {
     let user = await userModel.find();
     res.send(user);
-}
-);
-
-
-
-
+});
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
