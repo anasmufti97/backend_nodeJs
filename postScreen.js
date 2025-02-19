@@ -8,6 +8,10 @@ app.get("/", (req, res) => {
   res.send("Hello From post Screen");
 });
 
+
+
+
+/// Create User
 app.get("/create", async (req, res) => {
   let user = await userModel.create({
     userName: "anas",
