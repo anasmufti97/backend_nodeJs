@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const userModel = require('./userModel');
+const userModel = require('./models/userModel');
 
 app.use(function (req, res, next) {
     console.log("Middle wareworking");
@@ -28,15 +28,7 @@ app.get('/createUser', async (req, res) => {
 }
 );
 
-app.get('/updateUser', async (req, res) => {
-    let user = await userModel.create({
-        name: 'anas anas 2',
-        age: 25,
-        email: "anasmufti123@gmail.com"
-    })
-    res.send(user);
-}
-);
+
 app.get('/read', async (req, res) => {
     let user = await userModel.find();
     res.send(user);
