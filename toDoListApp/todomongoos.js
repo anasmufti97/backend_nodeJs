@@ -9,7 +9,6 @@ const Note = require("./../models/todoModel");
 
 const mongoose = require("mongoose");
 
-
 mongoose
   .connect(
     "mongodb+srv://anas_mufti:anas123123@cluster0.jht2l.mongodb.net/anas_mufti"
@@ -27,8 +26,6 @@ mongoose
       res.json(notes);
     });
 
-
-
     app.post("/addNote", async (req, res) => {
       const newData = Note({
         id: req.body.id,
@@ -43,14 +40,11 @@ mongoose
       res.json(response);
     });
     app.post("/delete", async (req, res) => {
-      
-   await Note.deleteOne({id: req.body.id})
-  
-        const response = { mongoose: "Data deleted successfully" };
-        res.json(response);
-      });
+      await Note.deleteOne({ id: req.body.id });
 
-
+      const response = { mongoose: "Data deleted successfully" };
+      res.json(response);
+    });
   });
 
 app.listen(3333, () => {
