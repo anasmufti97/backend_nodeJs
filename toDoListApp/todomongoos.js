@@ -36,20 +36,29 @@ mongoose
       });
 
 
-      
+
       await newData.save();
 
       const response = { mongoose: "Data added successfully" };
+
       res.json(response);
+    
     });
+
     app.post("/delete", async (req, res) => {
-      await Note.deleteOne({ id: req.body.id });
+    
+        await Note.deleteOne({ id: req.body.id });
 
       const response = { mongoose: "Data deleted successfully" };
+    
       res.json(response);
+    
     });
-  });
+  
+});
 
 app.listen(3333, () => {
-  console.log("Server is running on port 3333");
+
+    console.log("Server is running on port 3333");
+
 });
