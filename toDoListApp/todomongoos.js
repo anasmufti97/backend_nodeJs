@@ -26,6 +26,7 @@ mongoose
       res.json(notes);
     });
 
+
     app.post("/addNote", async (req, res) => {
       const newData = Note({
         id: req.body.id,
@@ -34,6 +35,8 @@ mongoose
         content: req.body.content,
       });
 
+
+      
       await newData.save();
 
       const response = { mongoose: "Data added successfully" };
