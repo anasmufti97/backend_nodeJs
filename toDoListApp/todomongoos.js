@@ -11,7 +11,9 @@ app.use(bodyParser.json());
 
 // Database Connection
 mongoose
-  .connect("mongodb+srv://anas_mufti:anas123123@cluster0.jht2l.mongodb.net/anas_mufti")
+  .connect(
+    "mongodb+srv://anas_mufti:anas123123@cluster0.jht2l.mongodb.net/anas_mufti"
+  )
   .then(() => {
     console.log("✅ Database connected");
   })
@@ -75,6 +77,5 @@ app.listen(PORT, async () => {
     console.error("❌ Ngrok failed to start:", error);
   }
 });
-
 
 // https://413c-182-185-158-96.ngrok-free.app
