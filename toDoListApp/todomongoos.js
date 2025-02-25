@@ -28,12 +28,20 @@ mongoose
 
 
     app.post("/addNote", async (req, res) => {
+
       const newData = Note({
+      
         id: req.body.id,
+      
         userid: req.body.userid,
+      
         title: req.body.title,
+      
         content: req.body.content,
-      });
+      
+      }
+    )
+    ;
 
 
 
